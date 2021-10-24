@@ -1,0 +1,19 @@
+<% if @product.errors.present? %>
+<h3>エラーがあります。</h3>
+<ul>
+    <% @product.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+</ul>
+<% end %>
+
+<%= form_for @product, url: {action: :create} do |f| %>
+<p>
+    <%= f.label :name, '名前' %>
+    <%= f.text_field :name %>
+    <%= f.label :price, '価格' %>
+    <%= f.text_field :price %>
+    <%= f.submit '投稿' %>
+</p>
+<%= link_to '戻る', :back %>
+<% end %>

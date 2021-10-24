@@ -1,0 +1,14 @@
+<%= form_for @cartitem, url: {action: :create} do |f| %>
+<p>
+    
+    <%= f.hidden_field :product_id, value: @product_id %>
+    
+
+    <%= @product_id%>
+
+    <%= f.label :qty, '数量' %>
+    <%= f.text_field :qty %>
+    <%= f.submit '投稿' %>
+</p>
+<%= link_to '戻る', :back %>
+<% end %>

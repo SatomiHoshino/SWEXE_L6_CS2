@@ -1,0 +1,9 @@
+<% @cart.each do |cart| %>
+    <% if @cart.blank? %>
+      <h1>カートに商品はありません</h1>
+    <% end %>
+    <% @product.each do |product| %>
+        <%= product.name %>
+        <%= "合計金額：#{@total}円" %>
+    <% end %>
+<% end %>
